@@ -3,8 +3,12 @@ from views.landing_page import landing_page
 from views.prediction_page import prediction_page
 from views.results_page import results_page
 
-# Rest of the navigation code remains the same
-
+st.set_page_config(
+    page_title="Cancer-Prediction",
+    page_icon="🩺",
+    layout="wide",
+    initial_sidebar_state="expanded"
+)
 
 st.sidebar.title("Navigation")
 if 'page' not in st.session_state:
@@ -23,4 +27,3 @@ elif page == "Result":
 if st.session_state['page'] != page:
     st.session_state['page'] = page
     st.rerun()
-

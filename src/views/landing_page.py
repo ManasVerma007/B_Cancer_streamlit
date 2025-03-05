@@ -3,7 +3,6 @@ import streamlit as st
 def landing_page():
     st.title("Welcome to the Breast Cancer Prediction App")
     
-    # Project Overview
     st.header("Project Overview")
     st.write("""
     This application helps medical professionals and researchers predict whether a breast cancer tumor 
@@ -11,7 +10,6 @@ def landing_page():
     breast mass tissue samples, our model provides quick and accurate predictions to support clinical decisions.
     """)
     
-    # Key Features
     st.header("Key Features")
     col1, col2 = st.columns(2)
     
@@ -32,10 +30,8 @@ def landing_page():
         - Visual result presentation
         """)
     
-    # Technical Details
     st.header("Technical Implementation")
     
-    # Model Information
     st.subheader("Machine Learning Model")
     st.write("""
     The prediction system uses a Random Forest Classifier trained on the Wisconsin Breast Cancer Dataset. 
@@ -47,7 +43,6 @@ def landing_page():
     The model averages around 97% accuracy.
     """)
     
-    # Frontend Information
     st.subheader("Frontend Technology")
     st.write("""
     The application is built using:
@@ -57,7 +52,6 @@ def landing_page():
     - Responsive design for various screen sizes
     """)
     
-    # How to Use
     st.header("How to Use")
     st.write("""
     1. Navigate to the 'Prediction' page using the sidebar
@@ -66,7 +60,6 @@ def landing_page():
     4. View the results and download the PDF report
     """)
         
-    # Call to Action
     st.markdown("---")
     st.markdown("""
     <div style='text-align: center; 

@@ -7,7 +7,6 @@ def results_page():
         result = st.session_state['result']
         form_data = st.session_state['form_data']
         
-        # White heading and larger result text
         st.markdown("<h4 style='color: white;'>Diagnosis Result:</h4>", unsafe_allow_html=True)
         if result == "Malignant":
             st.markdown(
