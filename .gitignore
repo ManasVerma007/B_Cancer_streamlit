@@ -15,28 +15,11 @@ ENV/
 .venv/
 .venv.bak/
 
-# PyCharm specific
-.idea/
-
-# VS Code specific
-.vscode/
-
-# Data files
-*.dat
-
-*.h5
-
-# Logs
-*.log
-
-# Config files
-*.ini
-*.toml
-*.yaml
-*.yml
 
 # Environment variables
 .env
 
 # Build files
 build
+github-actions-key
+github-actions-key.pub
