@@ -22,9 +22,8 @@ ENV/
 .vscode/
 
 # Data files
-*.csv
 *.dat
-*.json
+
 *.h5
 
 # Logs
