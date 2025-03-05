@@ -25,7 +25,6 @@ ENV/
 *.csv
 *.dat
 *.json
-*.pkl
 *.h5
 
 # Logs
