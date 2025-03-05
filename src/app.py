@@ -47,6 +47,25 @@ elif st.session_state['page'] == "Result":
     results_page()
 
 st.sidebar.markdown("---")
+
+# Add Social Links section
+st.sidebar.markdown("<h2 style='text-align: center; margin-bottom: 15px;'>Connect With Me</h2>", unsafe_allow_html=True)
+st.sidebar.markdown("""
+<div class="social-links" style='display: flex; justify-content: center; margin-bottom: 20px;'>
+    <a href="https://github.com/ManasVerma007/B_Cancer_streamlit" target="_blank" style='margin: 0 10px; color: #3498db; text-decoration: none;'>
+        <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" width="32" height="32" style='display: block; margin: 0 auto;'>
+        <span style='display: block; text-align: center; font-size: 0.8rem; margin-top: 5px;'>GitHub</span>
+    </a>
+    <a href="https://www.linkedin.com/in/manas-verma-0000ba227/" target="_blank" style='margin: 0 10px; color: #3498db; text-decoration: none;'>
+        <img src="https://content.linkedin.com/content/dam/me/business/en-us/amp/brand-site/v2/bg/LI-Bug.svg.original.svg" width="32" height="32" style='display: block; margin: 0 auto;'>
+        <span style='display: block; text-align: center; font-size: 0.8rem; margin-top: 5px;'>LinkedIn</span>
+    </a>
+</div>
+""", unsafe_allow_html=True)
+
+st.sidebar.markdown("---")
+
+# Footer
 st.sidebar.markdown("""
 <div class="sidebar-footer" style='text-align: center; padding: 10px; opacity: 0.7;'>
     <p style='font-size: 0.8rem; margin-bottom: 5px;'>

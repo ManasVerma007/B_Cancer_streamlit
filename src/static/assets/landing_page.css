@@ -36,12 +36,20 @@
     color: var(--text-color, #2c3e50);
 }
 
+/* Updated tech-container to match feature-card styling */
 .tech-container {
-    background-color: var(--container-bg, #eef2f7);
+    background-color: var(--card-bg, #f8f9fa);
     border-radius: 10px;
     padding: 1.5rem;
     margin-top: 1rem;
-    border: 1px solid var(--border-color, #d1d9e6);
+    border-left: 4px solid #3498db;
+    margin-bottom: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Make sure text inside tech-container is visible */
+.tech-container p, .tech-container li {
+    color: var(--text-color, #2c3e50);
 }
 
 .call-to-action {

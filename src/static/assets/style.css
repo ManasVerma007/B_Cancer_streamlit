@@ -54,3 +54,27 @@ footer {
 .sidebar-border {
     border-color: var(--border-color);
 }
+
+/* Social Links Styling */
+.social-links a {
+    transition: all 0.3s ease;
+    opacity: 0.85;
+    color: var(--text-color, #2c3e50);
+    text-decoration: none;
+}
+
+.social-links a:hover {
+    opacity: 1;
+    transform: translateY(-2px);
+}
+
+.social-links img {
+    filter: var(--icon-filter, none);
+}
+
+/* This handles GitHub and LinkedIn icons in dark mode */
+@media (prefers-color-scheme: dark) {
+    .social-links img {
+        --icon-filter: brightness(0) invert(1);
+    }
+}
