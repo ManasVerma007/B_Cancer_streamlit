@@ -1,25 +1,33 @@
 # Breast Cancer Prediction Web App
 
-This repository contains a web application for predicting breast cancer using machine learning models. The app is built using Python and Jupyter Notebook, and it is hosted on an AWS EC2 instance.
+An interactive web application for predicting breast cancer malignancy based on tumor characteristics using machine learning.
 
 ## Features
 
-- **Breast Cancer Prediction**: The app takes input features from users and predicts the likelihood of breast cancer.
-- **Machine Learning Model**: Utilizes a trained model built using `scikit-learn` for predictions.
-- **Web Interface**: A user-friendly web interface built with `FastAPI` and `Jinja2`.
-- **Hosted on EC2**: The application is deployed on an AWS EC2 instance for accessibility. (http://ec2-13-202-161-50.ap-south-1.compute.amazonaws.com:8080/)
+- **AI-Powered Predictions**: Uses a Random Forest Classifier trained on the Wisconsin Breast Cancer Dataset to detect malignant vs benign tumors with ~96% accuracy
+- **Interactive UI**: User-friendly interface built with Streamlit for inputting tumor measurements
+- **Visual Results**: Clear presentation of prediction results with probability indicators
+- **Downloadable Reports**: Generate and download detailed PDF reports of predictions
+- **Responsive Design**: Adapts to both light and dark themes
 
+## Live Demo
+
+Access the live application at: [http://13.48.43.30:8501/](http://13.48.43.30:8501/)
+
+## Technology Stack
+
+- **Frontend**: Streamlit
+- **Machine Learning**: scikit-learn (Random Forest Classifier)
+- **Data Processing**: pandas, numpy
+- **Reporting**: FPDF
+- **Deployment**: AWS EC2
  
-
 ## Requirements
 
-The required Python packages are listed in `requirements.txt`:
+For complete requirements, see `requirements.txt`.
 
-```plaintext
-pandas
-numpy
-scikit-learn
-fastapi
-uvicorn
-jinja2
+## Usage
 
+1. Navigate to the app URL
+2. Input tumor measurements on the "Make Prediction" page
+3. View the prediction results and download PDF reports
