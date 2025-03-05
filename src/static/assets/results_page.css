@@ -1,0 +1,111 @@
+.page-title {
+    color: #2c3e50;
+    font-size: 2.2rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid #3498db;
+}
+
+.result-section {
+    background-color: #f8f9fa;
+    padding: 2rem;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.result-header {
+    color: #2c3e50;
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.malignant-result {
+    background-color: #FFA07A;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    border: 2px solid #8B0000;
+    box-shadow: 0 4px 6px rgba(139,0,0,0.1);
+    width: 100%;
+    margin: 1rem 0;
+}
+
+.benign-result {
+    background-color: #90EE90;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    border: 2px solid #006400;
+    box-shadow: 0 4px 6px rgba(0,100,0,0.1);
+    width: 100%;
+    margin: 1rem 0;
+}
+
+.malignant-text {
+    color: #8B0000;
+    font-size: 28px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.benign-text {
+    color: #006400;
+    font-size: 28px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.feature-card {
+    background-color: #ffffff;
+    padding: 12px;
+    border-radius: 8px;
+    border-left: 4px solid #3498db;
+    margin-bottom: 12px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.feature-title {
+    color: #2c3e50;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.feature-value {
+    color: #3498db;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.feature-group {
+    background-color: #eef2f7;
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 10px;
+    border: 1px solid #d1d9e6;
+}
+
+.download-button {
+    background-color: #3498db;
+    color: white;
+    font-weight: bold;
+    padding: 12px 24px;
+    border-radius: 5px;
+    text-align: center;
+    margin: 20px auto;
+    display: block;
+    width: fit-content;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.info-message {
+    background-color: #e3f2fd;
+    color: #0d47a1;
+    padding: 15px;
+    border-radius: 5px;
+    border-left: 5px solid #0d47a1;
+    margin: 20px 0;
+}

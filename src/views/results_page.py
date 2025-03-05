@@ -1,76 +1,128 @@
 import streamlit as st
+import os
 from utils.pdf_generator import create_pdf
 
 def results_page():
-    st.title("Prediction Result")
+    css_file_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), "static", "assets", "results_page.css")
+    with open(css_file_path, "r") as f:
+        css = f.read()
+    
+    st.markdown(f"<style>{css}</style>", unsafe_allow_html=True)
+    
+    st.markdown('<h1 class="page-title">Prediction Result</h1>', unsafe_allow_html=True)
+    
     if 'result' in st.session_state:
         result = st.session_state['result']
         form_data = st.session_state['form_data']
         
-        st.markdown("<h4 style='color: white;'>Diagnosis Result:</h4>", unsafe_allow_html=True)
+        st.markdown('<div class="result-section">', unsafe_allow_html=True)
+        st.markdown('<h3 class="result-header">Diagnosis Result:</h3>', unsafe_allow_html=True)
+        
         if result == "Malignant":
             st.markdown(
                 f"""
-                <div style='background-color: #FFA07A; padding: 8px; border-radius: 6px;
-                text-align: left; border: 2px solid #8B0000; width: 25%; margin-left: 0;
-                box-shadow: 2px 2px 5px rgba(0,0,0,0.1);'>
-                    <h4 style='color: #8B0000; margin: 0; font-size: 25px;'>{result}</h4>
+                <div class="malignant-result">
+                    <p class="malignant-text">⚠️ {result}</p>
                 </div>
                 """,
                 unsafe_allow_html=True
             )
+            st.markdown("""
+                <p style="color: #8B0000; font-style: italic;">
+                    The model predicts this tumor is likely malignant. This suggests the presence of cancerous cells.
+                    Please consult with a medical professional for a thorough evaluation.
+                </p>
+                """, unsafe_allow_html=True)
         else:
             st.markdown(
                 f"""
-                <div style='background-color: #90EE90; padding: 8px; border-radius: 6px;
-                text-align: left; border: 2px solid #006400; width: 25%; margin-left: 0;
-                box-shadow: 2px 2px 5px rgba(0,0,0,0.1);'>
-                    <h4 style='color: #006400; margin: 0; font-size: 25px;'>{result}</h4>
+                <div class="benign-result">
+                    <p class="benign-text">✓ {result}</p>
                 </div>
                 """,
                 unsafe_allow_html=True
             )
+            st.markdown("""
+                <p style="color: #006400; font-style: italic;">
+                    The model predicts this tumor is likely benign. This suggests the absence of cancerous cells.
+                    Regular check-ups are still recommended.
+                </p>
+                """, unsafe_allow_html=True)
         
-        st.markdown("<br>", unsafe_allow_html=True)
+        st.markdown("</div>", unsafe_allow_html=True)
         
-        st.markdown("<h4 style='color: white;'>Input Features:</h4>", unsafe_allow_html=True)
-        features_col1, features_col2, features_col3 = st.columns(3)
+        # Feature display section
+        st.markdown('<div class="result-section">', unsafe_allow_html=True)
+        st.markdown('<h3 class="result-header">Input Features:</h3>', unsafe_allow_html=True)
+        
+        tabs = st.tabs(["Mean Values", "SE Values", "Worst Values"])
         
         mean_features = {k:v for k,v in form_data.items() if 'mean' in k}
         se_features = {k:v for k,v in form_data.items() if 'se' in k}
         worst_features = {k:v for k,v in form_data.items() if 'worst' in k}
         
-        def display_feature_group(features, title, container):
-            with container:
-                st.markdown(f"<h5 style='color: white;'>{title}</h5>", unsafe_allow_html=True)
-                for key, value in features.items():
-                    st.markdown(
-                        f"""
-                        <div style='background-color: #f5f5f5; padding: 8px; border-radius: 4px; margin: 4px 0;
-                        border: 1px solid #ddd;'>
-                            <p style='color: #666666; margin: 0; font-size: 14px;'>
-                                <strong>{key.replace('_mean', '').replace('_se', '').replace('_worst', '').title()}</strong>
-                                <br>
-                                <span style='color: #333333; font-size: 16px;'>{value:.2f}</span>
-                            </p>
-                        </div>
-                        """,
-                        unsafe_allow_html=True
-                    )
+        with tabs[0]:
+            for key, value in mean_features.items():
+                formatted_key = key.replace('_mean', '').title()
+                st.markdown(f"""
+                <div class="feature-card">
+                    <div class="feature-title">{formatted_key}</div>
+                    <div class="feature-value">{value:.3f}</div>
+                </div>
+                """, unsafe_allow_html=True)
+                
+        with tabs[1]:
+            for key, value in se_features.items():
+                formatted_key = key.replace('_se', '').title()
+                st.markdown(f"""
+                <div class="feature-card">
+                    <div class="feature-title">{formatted_key}</div>
+                    <div class="feature-value">{value:.3f}</div>
+                </div>
+                """, unsafe_allow_html=True)
+                
+        with tabs[2]:
+            for key, value in worst_features.items():
+                formatted_key = key.replace('_worst', '').title()
+                st.markdown(f"""
+                <div class="feature-card">
+                    <div class="feature-title">{formatted_key}</div>
+                    <div class="feature-value">{value:.3f}</div>
+                </div>
+                """, unsafe_allow_html=True)
         
-        display_feature_group(mean_features, "Mean Values", features_col1)
-        display_feature_group(se_features, "SE Values", features_col2)
-        display_feature_group(worst_features, "Worst Values", features_col3)
+        st.markdown("</div>", unsafe_allow_html=True)
         
-        st.markdown("<br>", unsafe_allow_html=True)
+        # PDF Download button
+        pdf_data = create_pdf(result, form_data)
+        st.download_button(
+            label="📥 Download Complete PDF Report",
+            data=pdf_data,
+            file_name="breast_cancer_prediction_results.pdf",
+            mime="application/pdf",
+            key="download-pdf",
+            use_container_width=True
+        )
         
-        col1, col2, col3 = st.columns([1, 2, 1])
+        # Navigation buttons
+        col1, col2 = st.columns(2)
+        with col1:
+            if st.button("⬅️ Make Another Prediction"):
+                st.session_state['page'] = 'Prediction'
+                st.rerun()
         with col2:
-            st.download_button(
-                label="📥 Download Report as PDF",
-                data=create_pdf(result, form_data),
-                file_name="breast_cancer_prediction_results.pdf",
-                mime="application/pdf",
-            )
+            if st.button("🏠 Return to Home"):
+                st.session_state['page'] = 'Home'
+                st.rerun()
+            
     else:
-        st.info("No prediction made yet. Please go to the 'Prediction' page to input features and get a prediction.")
+        st.markdown("""
+        <div class="info-message">
+            <h4 style="margin-top: 0;">No Prediction Results Available</h4>
+            <p>No prediction has been made yet. Please go to the 'Prediction' page to input features and get a prediction.</p>
+        </div>
+        """, unsafe_allow_html=True)
+        
+        if st.button("Go to Prediction Page"):
+            st.session_state['page'] = 'Prediction'
+            st.rerun()

@@ -1,0 +1,56 @@
+.main .block-container {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+/* Sidebar styling - theme adaptive */
+.sidebar .sidebar-content {
+    background-color: var(--sidebar-bg);
+}
+
+/* Navigation styling */
+div[data-testid="stSidebarNav"] {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+/* Button styling */
+div.stButton > button:first-child {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+}
+
+div.stButton > button:hover {
+    background-color: #2980b9;
+    border: none;
+}
+
+/* Footer styling */
+footer {
+    visibility: hidden;
+}
+
+/* Theme-adaptive text colors */
+.sidebar-content, .sidebar-text {
+    color: var(--text-color);
+}
+
+/* Custom sidebar header and footer - theme adaptive */
+.sidebar-header h1 {
+    color: var(--header-color);
+    margin-bottom: 0;
+    font-size: 1.8rem;
+}
+
+.sidebar-header p, .sidebar-footer p {
+    color: var(--text-muted-color);
+}
+
+/* Border color adaptation */
+.sidebar-border {
+    border-color: var(--border-color);
+}
