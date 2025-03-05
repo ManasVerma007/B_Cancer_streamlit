@@ -1,7 +1,7 @@
 import streamlit as st
 
 def landing_page():
-    st.title("Welcome to the Breast Cancer Prediction App")
+    st.title("Welcome to the Breast Cancer Prediction App Peeps")
     
     # Project Overview
     st.header("Project Overview")
