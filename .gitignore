@@ -1,0 +1,44 @@
+# Python bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Virtual environments
+env/
+venv/
+ENV/
+.venv/
+.pipenv/
+.venv/
+.venv.bak/
+
+# PyCharm specific
+.idea/
+
+# VS Code specific
+.vscode/
+
+# Data files
+*.csv
+*.dat
+*.json
+*.pkl
+*.h5
+
+# Logs
+*.log
+
+# Config files
+*.ini
+*.toml
+*.yaml
+*.yml
+
+# Environment variables
+.env
+
+# Build files
+build
