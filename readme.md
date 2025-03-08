@@ -12,7 +12,7 @@ An interactive web application for predicting breast cancer malignancy based on 
 
 ## Live Demo
 
-Access the live application at: [http://13.48.43.30:8501/](http://13.48.43.30:8501/)
+Access the live application at: [https://cancer-prediction.duckdns.org/](https://cancer-prediction.duckdns.org/)
 
 ## Technology Stack
 
@@ -21,6 +21,8 @@ Access the live application at: [http://13.48.43.30:8501/](http://13.48.43.30:85
 - **Data Processing**: pandas, numpy
 - **Reporting**: FPDF
 - **Deployment**: AWS EC2
+- **HTTPS**:  Let's Encrypt certificates
+- **Domain Management**: DuckDNS
  
 ## Requirements
 
