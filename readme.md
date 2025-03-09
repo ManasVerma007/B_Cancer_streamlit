@@ -4,7 +4,7 @@ An interactive web application for predicting breast cancer malignancy based on 
 
 ## Features
 
-- **AI-Powered Predictions**: Uses a Random Forest Classifier trained on the Wisconsin Breast Cancer Dataset to detect malignant vs benign tumors with ~96% accuracy
+- **AI-Powered Predictions**: Uses a Logistic Regression trained on the Wisconsin Breast Cancer Dataset to detect malignant vs benign tumors with ~96% accuracy
 - **Interactive UI**: User-friendly interface built with Streamlit for inputting tumor measurements
 - **Visual Results**: Clear presentation of prediction results with probability indicators
 - **Downloadable Reports**: Generate and download detailed PDF reports of predictions
@@ -17,7 +17,7 @@ Access the live application at: [https://cancer-prediction.duckdns.org/](https:/
 ## Technology Stack
 
 - **Frontend**: Streamlit
-- **Machine Learning**: scikit-learn (Random Forest Classifier)
+- **Machine Learning**: scikit-learn (Logistic Regression)
 - **Data Processing**: pandas, numpy
 - **Reporting**: FPDF
 - **Deployment**: AWS EC2
