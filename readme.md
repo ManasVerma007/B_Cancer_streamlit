@@ -12,7 +12,7 @@ An interactive web application for predicting breast cancer malignancy based on 
 
 ## Live Demo
 
-Access the live application at: [https://cancer-prediction.duckdns.org/](https://cancer-prediction.duckdns.org/)
+Access the live application at: [https://b-cancer-streamlit.onrender.com/](https://b-cancer-streamlit.onrender.com/)
 
 ## Technology Stack
 
